@@ -1,0 +1,11 @@
+<app-action-bar [placeholder]="'Add new list'" (onAdd)="addItem($event)" (onSearch)="setSearchTerm($event)"></app-action-bar>
+<div>
+  <mat-list>
+    <mat-list-item *ngFor="let item of (items | nameFilter: searchTerm)">
+      <app-editor [item]="item" (onToggle)="updateItem($event)"></app-editor>
+      <mat-chip-list><mat-chip>{{item.todos_count}}</mat-chip></mat-chip-list>
+      <button [routerLink]="['/value', item.id]" mat-raised-button><mat-icon>details</mat-icon></button>
+      <button (click)="removeItem(item)" mat-raised-button><mat-icon>delete</mat-icon></button>
+    </mat-list-item>
+  </mat-list>
+</div>

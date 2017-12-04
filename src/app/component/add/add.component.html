@@ -1,0 +1,6 @@
+<mat-form-field>
+  <input [(ngModel)]="name" (keyup.enter)="add(name)" placeholder="{{placeholder}}" matInput>
+</mat-form-field>
+<button (click)="add(name)" mat-raised-button color="primary">
+  <mat-icon>add</mat-icon>
+</button>

@@ -1,0 +1,4 @@
+<label *ngIf="!item._edit" (click)="item._edit=true">{{item.name}}</label>
+<mat-form-field *ngIf="item._edit">
+  <input [(ngModel)]="item.name" (keyup.enter)="emit(item); item._edit=false;" matInput>
+</mat-form-field>

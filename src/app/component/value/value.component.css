@@ -1,0 +1,21 @@
+.header {
+  padding: 5px 17px;
+}
+
+.header label {
+  padding: 0 10px;
+}
+
+mat-list mat-chip-list {
+  padding: 0 22px;
+}
+
+.mat-chip:not(.mat-basic-chip) {
+  padding: 7px;
+}
+
+app-completion {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 17px;
+}

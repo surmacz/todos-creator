@@ -1,0 +1,16 @@
+<div class="header">
+  <button mat-raised-button (click)="back()"><mat-icon>keyboard_return</mat-icon></button>
+  <span><label>List name:</label>{{list?.name}}</span>
+</div>
+<app-action-bar [placeholder]="'Add new todo'" (onAdd)="addItem($event)" (onSearch)="setSearchTerm($event)"></app-action-bar>
+<div>
+  <app-completion (onChoose)="setCompletionState($event)"></app-completion>
+  <mat-list>
+    <mat-list-item *ngFor="let item of (items | nameFilter: searchTerm | completionFilter: completionState)">
+      <app-editor [item]="item" (onToggle)="updateItem($event)"></app-editor>
+      <mat-chip-list *ngIf="item.is_complete"><mat-chip><mat-icon>done</mat-icon></mat-chip></mat-chip-list>
+      <button *ngIf="!item.is_complete" (click)="item.is_complete=true; updateItem(item);" mat-raised-button>Complete</button>
+      <button (click)="removeItem(item)" mat-raised-button><mat-icon>delete</mat-icon></button>
+    </mat-list-item>
+  </mat-list>
+</div>

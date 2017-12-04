@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+body {
+  display: flex;
+  justify-content: center;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/grad-bg.png") no-repeat center center/cover #8895DC;
+}
+
+app-editor {
+  width: 100%;
+}
